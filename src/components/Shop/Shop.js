@@ -13,7 +13,6 @@ const Shop = () => {
     }, [])
 
     const addToCart = (product) => {
-        console.log(product)
         setCart([...cart, product]);
     }
     return (
