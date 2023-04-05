@@ -29,7 +29,19 @@ const Shop = () => {
     }, [products])
 
     const addToCart = (product) => {
-        setCart([...cart, product]);
+        let newCart = [];
+        const exixt = cart.find(selecProduct => selecProduct.id === product.id);
+        if(!exixt){
+            product.quantity =1;
+            newCart = [...cart, product];
+        }
+        else{
+            const rest = cart.filter(selecProduct => selecProduct.id !== product.id);
+            exixt.quantity = exixt.quantity +1;
+            newCart = [...rest, exixt];
+        }
+        console.log(exixt)
+        setCart(newCart);
         addToDb(product.id);
     }
     return (
