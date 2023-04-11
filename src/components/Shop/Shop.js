@@ -40,7 +40,6 @@ const Shop = () => {
             exixt.quantity = exixt.quantity +1;
             newCart = [...rest, exixt];
         }
-        console.log(exixt)
         setCart(newCart);
         addToDb(product.id);
     }
