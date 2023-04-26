@@ -9,6 +9,8 @@ import Inventory from './components/Inventory/Inventory';
 import { getShoppingCart } from './utilities/fakedb';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
+import Shipping from './components/Shipping/Shipping';
+import PrivateRoute from './routes/PrivateRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -40,7 +42,11 @@ function App() {
         },
         {
           path: '/inventory',
-          element: <Inventory></Inventory>
+          element: <PrivateRoute><Inventory></Inventory></PrivateRoute>
+        },
+        {
+          path: 'shipping',
+          element: <PrivateRoute><Shipping></Shipping></PrivateRoute>
         },
         {
           path: '/about', element: <About></About>
@@ -48,7 +54,7 @@ function App() {
         {
           path: 'login',
           element: <Login></Login>
-        }, 
+        },
         {
           path: 'signup',
           element: <Signup></Signup>
