@@ -1,5 +1,5 @@
 .form-container {
-    height: 500px;
+    height: 600px;
     width: 400px;
     margin: 20px auto;
     border-radius: 10px;
@@ -11,7 +11,7 @@
     color: #2A414F;
     font-weight: 400;
     font-size: 35px;
-    padding-top: 38px;
+    padding-top: 35px;
 }
 
 .form-body {
