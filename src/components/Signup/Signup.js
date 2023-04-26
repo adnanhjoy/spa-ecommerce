@@ -6,7 +6,7 @@ import { AuthContext } from '../../Context/UserContext';
 const Signup = () => {
     const [error, setError] = useState('');
 
-    const {createUser} = useContext(AuthContext)
+    const {createUser} = useContext(AuthContext);
 
     const signupUser = event => {
         event.preventDefault();
@@ -25,9 +25,8 @@ const Signup = () => {
         }
 
         createUser(email, password)
-        .then(result => {
-            const user = result.user
-            form.reset()
+        .then( result => {
+            const user = result.user;
         })
         .catch(error => console.error(error))
     }
